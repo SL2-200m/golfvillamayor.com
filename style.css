@@ -1,0 +1,444 @@
+/* Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* For smooth scrolling on nav link clicks */
+}
+
+:root {
+    --primary-green: #2E7D32; /* Deep Green */
+    --secondary-green: #4CAF50; /* Lighter Green */
+    --accent-gold: #FFC107;   /* Gold */
+    --light-bg: #f4f4f4;
+    --dark-text: #333;
+    --light-text: #fff;
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #fff;
+}
+
+/* --- Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    height: 50px; /* Adjust as needed */
+    /* If using text logo: */
+    /* font-size: 1.8rem; font-weight: bold; color: var(--primary-green); */
+}
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    text-decoration: none;
+}
+.logo-link {
+    text-decoration: none;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-green);
+}
+
+.cta-button {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.cta-button.nav-cta {
+    margin-left: 20px;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-green);
+    transform: translateY(-2px);
+}
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+.cta-button.secondary:hover {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+}
+
+
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--dark-text);
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Hero Section --- */
+#hero {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    position: relative; /* For overlay */
+    padding-top: 80px; /* Account for fixed navbar height */
+}
+
+#hero::before { /* Overlay for text readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative; /* To sit on top of the overlay */
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Content Sections --- */
+.content-section {
+    padding: 80px 2rem 40px; /* Top padding accounts for navbar */
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+.content-section:first-of-type {
+    padding-top: 100px; /* Extra padding for the first section after hero if navbar is transparent initially */
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-green);
+    position: relative;
+    display: inline-block; /* For pseudo-element positioning */
+}
+.content-section h2::after { /* Underline effect */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin: 0.5rem auto 0;
+}
+
+.content-section p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+}
+.placeholder-image {
+    width: 100%;
+    height: 250px; /* Adjust as needed */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-text);
+    font-weight: bold;
+}
+
+
+/* Amenities Grid */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.amenity-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden; /* To contain image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.amenity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.amenity-card img, .amenity-card .placeholder-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* or use .placeholder-image styles */
+}
+.amenity-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    color: var(--primary-green);
+}
+.amenity-card p {
+    font-size: 0.95rem;
+    margin: 0 1rem 1rem;
+    color: #666;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.gallery-item {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+.gallery-item:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    padding: 60px 2rem;
+}
+.cta-section h2 {
+    color: var(--light-text);
+}
+.cta-section h2::after {
+    background-color: var(--accent-gold);
+}
+.cta-section p {
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+}
+.cta-section .cta-button {
+    background-color: var(--accent-gold);
+    color: var(--dark-text);
+    margin: 0.5rem;
+}
+.cta-section .cta-button:hover {
+    background-color: #ffdb58; /* Lighter gold */
+}
+.cta-section .cta-button.secondary {
+    background-color: transparent;
+    color: var(--light-text);
+    border: 2px solid var(--light-text);
+}
+.cta-section .cta-button.secondary:hover {
+    background-color: var(--light-text);
+    color: var(--primary-green);
+}
+
+
+/* Contact Section */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+.contact-info p {
+    margin-bottom: 0.8rem;
+}
+.contact-info a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+.contact-form button {
+    width: auto; /* So it doesn't take full width */
+}
+.map-container {
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden; /* To apply border-radius to iframe */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Animations --- */
+/* Initial states for load animations */
+.animate-on-load {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+.animate-on-load.delay-1 { animation-delay: 0.3s; }
+.animate-on-load.delay-2 { animation-delay: 0.6s; }
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial states for scroll animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide on mobile by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Below navbar */
+        left: 0;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+    .nav-links li {
+        text-align: center;
+        margin: 0;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+    .nav-cta {
+        display: none; /* Hide separate CTA, can be part of menu or shown differently */
+    }
+    .hamburger {
+        display: block;
+    }
+    /* Hamburger animation (optional X mark) */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    .content-section h2 {
+        font-size: 2rem;
+    }
+    .contact-container {
+        flex-direction: column;
+    }
+}

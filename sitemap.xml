@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://golfvillamayor.com/</loc>
+    <lastmod>2023-10-27</lastmod> <!-- Update with actual last modification date -->
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://golfvillamayor.com/index.html#about</loc> <!-- Or if you make separate pages: /about.html -->
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://golfvillamayor.com/index.html#courses</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://golfvillamayor.com/index.html#amenities</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://golfvillamayor.com/index.html#gallery</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>http://golfvillamayor.com/index.html#contact</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- If you had other pages like /membership.html, /events.html, add them here -->
+</urlset>

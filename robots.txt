@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/ # Example: if you had an admin area you wanted to hide
+Disallow: /private_files/ # Example
+
+Sitemap: http://golfvillamayor.com/sitemap.xml
+# Again, use https:// if your site uses SSL
